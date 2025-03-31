@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прибывалка электричек</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title"><i class="fas fa-train"></i> Расписание электричек</h1>
+            <nav>
+                <a href="./index.html"><i class="fas fa-home"></i> Главная</a>
+                <a href="./route.html"><i class="fas fa-route"></i> Маршруты</a>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="centered-section">
+            <div class="search-section">
+                <div class="search-box">
+                    <div class="search-box-input">
+                        <input type="text" id="stationSearch" class="input-search" placeholder="Поиск станции...">
+                        <div class="loader" id="searchLoader" style="display: none;"></div>
+                    </div>
+                    <button id="searchButton" class="search-button">
+                        <i class="fas fa-search"></i> Поиск
+                    </button>
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+
+                <div class="favorites" id="favoritesSection">
+                    <h3><i class="fas fa-star"></i> Избранные станции:</h3>
+                    <div class="favorites-list" id="favoritesList"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-section">
+            <div id="yandexMap"></div>
+        </div>
+        
+        <div class="centered-section">
+            <div class="schedule-section">
+                <div class="schedule-view" id="scheduleView"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

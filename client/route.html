@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск маршрута электричек</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-route"></i> Поиск маршрута</h1>
+            <nav>
+                <a href="index.html"><i class="fas fa-home"></i> Главная</a>
+                <a href="route.html"><i class="fas fa-route"></i> Маршруты</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="route-page">
+        <div class="stations-selection">
+            <h3><i class="fas fa-map-marked-alt"></i> Выберите станции</h3>
+            <div class="route-search-box">
+                <div class="station-box">
+                    <label for="fromStation">Отправление:</label>
+                    <input type="text" id="fromStation" class="input-search" placeholder="Откуда">
+                    <div class="suggestions" id="fromSuggestions"></div>
+                </div>
+                
+                <div class="station-box" style="margin-top: 1.5rem;">
+                    <label for="toStation">Прибытие:</label>
+                    <input type="text" id="toStation" class="input-search" placeholder="Куда">
+                    <div class="suggestions" id="toSuggestions"></div>
+                </div>
+                
+                <button id="findRoute" class="search-button" style="margin-top: 2rem;">
+                    <i class="fas fa-directions"></i> Найти маршрут
+                </button>
+            </div>
+        </div>
+
+        <div class="routes-results">
+            <div class="elevated-section">
+                <div class="schedule-view" id="scheduleView">
+                    <div class="placeholder" style="text-align: center; color: var(--dark-gray); padding: 2rem;">
+                        <i class="fas fa-route" style="font-size: 3rem; color: var(--light-gray); margin-bottom: 1rem;"></i>
+                        <p>Выберите станции отправления и прибытия, чтобы увидеть доступные маршруты</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./route.js"></script>
+</body>
+</html>
